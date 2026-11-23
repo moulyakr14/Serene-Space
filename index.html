@@ -3,18 +3,12 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Home</title>
+		<title>Serene Space | Home</title>
 		<link rel="stylesheet" href="./style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-			rel="stylesheet"
-		/>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet"
 		/>
 	</head>
@@ -27,12 +21,10 @@
 			<a href="./contact.html">contact</a>
 		</nav>
 
-		<div class="information">
-			<div class="welcome">
+		<main>
+			<section class="information welcome">
 				<h1 class="head">welcome to serene space</h1>
-				<br />
 				<h3 class="subhead">Reconnect with Yourself</h3>
-				<br />
 				<p class="content">
 					Escape the everyday rush and experience the art of
 					relaxation with our thoughtfully curated spa and wellness
@@ -40,63 +32,54 @@
 				</p>
 
 				<div class="buttons">
-					<a href="./treatment.html"><h4>Explore Treatments</h4></a>
-					<a href="./contact.html"><h4>Book Your Visit</h4></a>
+					<a class="btn" href="./treatment.html">Explore Treatments</a>
+					<a class="btn" href="./contact.html">Book Your Visit</a>
 				</div>
-			</div>
+			</section>
 
-			<div class="sec1">
-				<h1 class="head">your space to unwind</h1>
-				<br />
-
+			<section class="information sec1">
+				<h2 class="head">your space to unwind</h2>
 				<p class="content">
 					"At Serene Space, we believe wellness begins with taking a
 					moment for yourself. Discover a peaceful sanctuary where
 					relaxation, self-care and thoughtful experiences come
 					together."
 				</p>
-			</div>
-		</div>
+			</section>
 
-		
-		<h2 class="head" style="margin: 50px 0 10px 73px;">Featured Treatments</h2>
-		<div class="featured">
-			<div class="therapy">
-				<img src="./asset/aromatherapy.jpg" alt="" />
-				<h4>Aromatherapy Therapy</h4>
-				<p>A soothing aromatic experience.</p>
-				<br />
-				<h5>₹2,499</h5>
-			</div>
-			<div class="therapy">
-				<img src="./asset/facial.jpg" alt="" />
-				<h4>Signature Facial</h4>
-				<p>A refreshing facial experience.</p>
-				<br />
-				<h5>₹1,799</h5>
-			</div>
-			<div class="therapy">
-				<img src="./asset/foot.jpg" alt="" />
-				<h4>Foot Rituals</h4>
-				<p>A relaxing foot-care session.</p>
-				<br />
-				<h5>₹999</h5>
-			</div>
-			<div class="therapy">
-				<img src="./asset/polish.jpg" alt="" />
-				<h4>Body Polish</h4>
-				<p>A gentle exfoliation experience.</p>
-				<br />
-				<h5>₹2,199</h5>
-			</div>
-		</div>
+			<h2 class="head section-title">Featured Treatments</h2>
+			<section class="featured">
+				<div class="therapy">
+					<img src="./asset/aromatherapy.jpg" alt="Aromatherapy session with essential oils" loading="lazy" />
+					<h4>Aromatherapy</h4>
+					<p>A soothing aromatic experience.</p>
+					<h5>₹2,499</h5>
+				</div>
+				<div class="therapy">
+					<img src="./asset/facial.jpg" alt="Signature facial treatment" loading="lazy" />
+					<h4>Signature Facial</h4>
+					<p>A refreshing facial experience.</p>
+					<h5>₹1,799</h5>
+				</div>
+				<div class="therapy">
+					<img src="./asset/foot.jpg" alt="Relaxing foot care ritual" loading="lazy" />
+					<h4>Foot Rituals</h4>
+					<p>A relaxing foot-care session.</p>
+					<h5>₹999</h5>
+				</div>
+				<div class="therapy">
+					<img src="./asset/polish.jpg" alt="Gentle body polish exfoliation" loading="lazy" />
+					<h4>Body Polish</h4>
+					<p>A gentle exfoliation experience.</p>
+					<h5>₹2,199</h5>
+				</div>
+			</section>
 
-		<div>
-			<div class="information" style="margin: 30px;">
-				<h2 class="head">you deserve this moment</h2><br>
+			<section class="information cta">
+				<h2 class="head">you deserve this moment</h2>
 				<p class="content">Take a break, slow down and make time for yourself.</p>
-				<a href="./contact.html"><h4 class="button" style="margin: 50px 500px;">Book Your Experience</h4></a>
-			</div>
-		</div>
+				<a class="btn" href="./contact.html">Book Your Experience</a>
+			</section>
+		</main>
 	</body>
 </html>
