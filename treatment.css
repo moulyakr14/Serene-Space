@@ -1,3 +1,14 @@
+:root {
+	--cream: #f8f6f0;
+	--card: #fffdf8;
+	--sand: #e9e2d4;
+	--clay: #b38b70;
+	--clay-dark: #8f6a50;
+	--sage: #84947a;
+	--sage-dark: #5f7054;
+	--green: #344c40;
+	--ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -7,30 +18,31 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	background-color: #f8f6f0;
+	background-color: var(--cream);
 	overflow-x: hidden;
 }
 img {
-	max-width: 75%;
 	display: block;
+	max-width: 100%;
 }
-h1 {
+h1,
+h3,
+h4 {
 	font-family: "Cormorant Garamond", serif;
 	font-optical-sizing: auto;
-	font-weight: 500;
 	font-style: normal;
-	color: #b38b70;
 }
-h5 {
-	font-family: "Cormorant Garamond", serif;
+h5,
+p {
+	font-family: "Montserrat", sans-serif;
 	font-optical-sizing: auto;
-	font-weight: 600;
 	font-style: normal;
-	color: #84947a;
 }
 p {
-	color: #344c40;
-	line-height: 1.6;
+	font-weight: 450;
+	font-size: 0.92rem;
+	line-height: 1.7;
+	color: var(--green);
 }
 .navbar {
 	position: sticky;
@@ -39,41 +51,224 @@ p {
 	width: 100%;
 	min-height: 70px;
 	padding: 8px 16px;
-	background-color: #e9e2d4;
+	background-color: var(--sand);
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-around;
 	gap: 4px;
 	font-family: "Montserrat", sans-serif;
-	font-optical-sizing: auto;
 	font-weight: 450;
-	font-style: normal;
-	box-shadow: 0 0 10px #84947a;
+	box-shadow: 0 2px 14px rgba(132, 148, 122, 0.45);
 }
 .navbar a {
 	text-decoration: none;
 	text-transform: uppercase;
-	color: #344c40;
+	letter-spacing: 0.08em;
+	font-size: 0.85rem;
+	color: var(--green);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 10px;
-	transition: background-color 0.4s ease, color 0.4s ease;
+	padding: 10px 14px;
+	border-radius: 15px;
+	transition:
+		background-color 0.4s var(--ease),
+		color 0.4s var(--ease);
 }
 .navbar a:hover,
+.navbar a:focus-visible,
+.navbar a[href="./treatment.html"] {
+	background-color: var(--clay);
+	color: var(--cream);
+}
 .navbar a:focus-visible {
-	background-color: #b38b70;
-	color: #f8f6f0;
-	border-radius: 15px;
+	outline: 2px solid var(--green);
+	outline-offset: 2px;
+}
+.therapy {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 24px 24px 80px;
+}
+.therapy > h1 {
+	text-align: center;
+	font-weight: 500;
+	color: var(--clay);
+	font-size: clamp(2.4rem, 5vw, 3.6rem);
+	line-height: 1.1;
+	margin-top: 64px;
+}
+.therapy > h1::after {
+	content: "";
+	display: block;
+	width: 56px;
+	height: 2px;
+	margin: 16px auto 0;
+	background: var(--clay);
+}
+.therapy > h5 {
+	text-align: center;
+	font-weight: 500;
+	font-size: 0.8rem;
+	letter-spacing: 0.22em;
+	color: var(--sage-dark);
+	margin: 14px 0 40px;
 }
 .treatments {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 24px;
+	gap: 28px;
+	align-items: stretch;
 }
-@media (max-width: 600px) {
+.treatments > div:last-child:nth-child(odd) {
+	grid-column: 1 / -1;
+	justify-self: center;
+	width: calc(50% - 14px);
+}
+.treatments > div {
+	background: var(--card);
+	border: 1px solid var(--sand);
+	border-radius: 20px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	padding-bottom: 28px;
+	transition:
+		transform 0.5s var(--ease),
+		box-shadow 0.5s var(--ease);
+}
+.treatments > div:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 18px 36px rgba(52, 76, 64, 0.14);
+}
+.treatments > div > *:not(img) {
+	margin-inline: 26px;
+}
+.treatments img {
+	width: 100%;
+	max-width: none;
+	height: auto;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	background: var(--sand);
+	margin-bottom: 6px;
+	transition: transform 0.9s var(--ease);
+}
+.treatments > div:hover img {
+	transform: scale(1.06);
+}
+.treatments h3 {
+	font-weight: 600;
+	font-size: 1.75rem;
+	line-height: 1.15;
+	color: var(--green);
+}
+.treatments h3 + p {
+	color: var(--clay-dark);
+	font-weight: 500;
+}
+.time {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 0;
+	border-block: 1px solid var(--sand);
+}
+.time p {
+	font-weight: 500;
+}
+.time p:last-child {
+	font-family: "Cormorant Garamond", serif;
+	font-size: 1.55rem;
+	font-weight: 600;
+	color: var(--clay);
+}
+.treatments h4 {
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	font-size: 0.78rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--sage-dark);
+	margin-top: 4px;
+}
+.treatments ol {
+	list-style: none;
+	display: grid;
+	gap: 8px;
+}
+.treatments li {
+	position: relative;
+	padding-left: 26px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	color: var(--green);
+}
+.treatments li::before {
+	content: "";
+	position: absolute;
+	left: 4px;
+	top: 0.4em;
+	width: 7px;
+	height: 12px;
+	border: solid var(--sage);
+	border-width: 0 2px 2px 0;
+	transform: rotate(40deg);
+}
+.treatments ol + p {
+	margin-top: auto;
+	padding: 14px 16px;
+	background: var(--sand);
+	border-radius: 12px;
+	font-size: 0.88rem;
+}
+@keyframes rise {
+	from {
+		opacity: 0;
+		transform: translateY(24px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@supports (animation-timeline: view()) {
+	.treatments > div {
+		animation: rise linear both;
+		animation-timeline: view();
+		animation-range: entry 0% entry 35%;
+	}
+}
+@media (max-width: 760px) {
+	.therapy {
+		padding: 8px 16px 56px;
+	}
+	.therapy > h1 {
+		margin-top: 48px;
+	}
 	.treatments {
 		grid-template-columns: 1fr;
+	}
+	.treatments > div:last-child:nth-child(odd) {
+		width: auto;
+		grid-column: auto;
+		justify-self: stretch;
+	}
+	.navbar a {
+		padding: 8px 10px;
+		font-size: 0.78rem;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	.treatments > div,
+	.treatments img {
+		animation: none;
+		transition: none;
 	}
 }
